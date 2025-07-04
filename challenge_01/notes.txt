@@ -1,0 +1,13 @@
+Algorithm Description
+
+1. For each string:
+	convert to lowercase
+	use frozenset to extract its set of unique characters
+	use the set as a dictionary key for grouping similar strings
+
+2. Count how many strings share each character set
+
+3. For each group with n >= 2 strings, count valid index pairs:
+	pairs = n * (n - 1) // 2
+
+4. Return the total count of the pairs.
