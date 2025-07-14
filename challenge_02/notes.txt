@@ -1,0 +1,20 @@
+Initial Thought:
+- Naively loop through all pairs (a, b) from 1 to n
+- Check if both a and b are prime
+- Too slow for large n (up to 10^6)
+
+Optimization Plan:
+- Use Sieve of Eratosthenes to precompute primes up to n
+- This gives O(n log log n) time complexity to generate all primes
+- Avoid checking every b — instead: set b = n - a
+
+First Mistake Avoided:
+- Originally thought about checking all combinations of primes
+  - Would have repeated [a, b] and [b, a]
+  - Looping only up to n // 2 ensures a < b and avoids duplicates
+
+Final Algorithm:
+1. Generate all prime flags up to n using sieve
+2. Loop a from 2 to n//2
+3. Set b = n - a
+4. If both a and b are prime, add [a, b] to result
