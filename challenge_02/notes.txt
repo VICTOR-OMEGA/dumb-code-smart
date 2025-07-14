@@ -4,9 +4,9 @@ Initial Thought:
 - Too slow for large n (up to 10^6)
 
 Optimization Plan:
-- Use Sieve of Eratosthenes to precompute primes up to n
+- Use Sieve of Eratosthenes to get down primes up to n
 - This gives O(n log log n) time complexity to generate all primes
-- Avoid checking every b — instead: set b = n - a
+- Avoid checking every b instead: set b = n - a
 
 First Mistake Avoided:
 - Originally thought about checking all combinations of primes
