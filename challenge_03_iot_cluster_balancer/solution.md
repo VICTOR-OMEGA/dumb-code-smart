@@ -1,5 +1,3 @@
-High-level idea
-
 The minimal possible maximum segment sum lies between:
 
 L = max(loads) (a segment must at least hold the largest single device), and
@@ -10,7 +8,7 @@ We binary-search M on [L, R] asking: can we partition into ≤ k segments such t
 
 Feasibility (check) is done greedily from left to right: accumulate device loads into current segment until adding next device would exceed M, then start a new segment. If total segments used ≤ k, M is feasible; otherwise not.
 
-Why greedy works: for the contiguous partition problem with fixed M the greedy left-to-right packing minimizes number of segments used — any feasible packing can be transformed to the greedy packing without increasing segment sums or segment counts. So feasibility check is correct.
+Why greedy works: for the contiguous partition problem with fixed M the greedy left-to-right packing minimizes number of segments used and any feasible packing can be transformed to the greedy packing without increasing segment sums or segment counts. So feasibility check is correct.
 
 
 Algorithm
@@ -69,7 +67,7 @@ Use 64-bit integers (Python int is arbitrary precision; in other languages use 6
 
 Avoid off-by-one in binary search: use while left < right with mid = (left + right) // 2 and move bounds as right = mid or left = mid + 1.
 
-In feasible check, check if x > M: return False — ensures we handle single huge elements early.
+In feasible check, check if x > M: return False. it ensures we handle single huge elements early.
 
 Be careful about exactly k segments requirement: the check allows ≤ k segments (we can always add empty segments conceptually to reach exactly k), but because segments must be non-empty, the greedy uses as few segments as possible; if it uses ≤ k, we can split some segments (if needed) to reach exactly k while not increasing the maximum. So segments <= k is the correct feasibility condition.
 
@@ -81,8 +79,5 @@ k == 1 → answer = sum(loads).
 
 Single very large load among small loads → answer must at least be that large element.
 
-Empty input: handle gracefully (no output or define behavior).
-
-Large n and large values: algorithm remains within time for constraints; use fast I/O (read entire stdin and parse tokens) in Python to avoid TLE on heavy input.
-
+Empty input: no output or define behavior00).
 

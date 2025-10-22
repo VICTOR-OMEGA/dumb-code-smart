@@ -12,7 +12,7 @@ Why contiguous?
 Rejected variants
 - Arbitrary assignment to servers (NP-hard partition).
 - Allow splitting device loads across servers (unrealistic).
-- Minimize max-min difference directly — harder to decide; minimizing max load is standard and competitive.
+- Minimize max-min difference directly as it is harder to decide; minimizing max load is standard and competitive.
 
 Final choice
 - Problem: Given n devices in fixed order and their integer loads, partition into k contiguous groups minimizing the maximum group sum.

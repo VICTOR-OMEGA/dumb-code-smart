@@ -1,4 +1,5 @@
-IoT Cluster Balancer — Problem Statement
+IoT Cluster Balancer
+ Problem Statement
 
 You are given `n` IoT devices arranged in a fixed order (e.g., along a street).
 Each device `i` produces `loads[i]` kilobytes of data per second (positive integer).
