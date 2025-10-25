@@ -79,5 +79,5 @@ k == 1 → answer = sum(loads).
 
 Single very large load among small loads → answer must at least be that large element.
 
-Empty input: no output or define behavior00).
+Empty input: no output or define behavior.
 
